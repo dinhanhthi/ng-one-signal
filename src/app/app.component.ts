@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OneSignal } from 'onesignal-ngx';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent {
 
   constructor(private oneSignal: OneSignal) {
     this.oneSignal.init({
-      appId: '<YOUR_APP_ID>',
+      appId: environment.oneSignal.appId,
+      safari_web_id: environment.oneSignal.safariWebId,
       allowLocalhostAsSecureOrigin: true,
       serviceWorkerPath: 'OneSignalSDKWorker.js'
     }).then(async () => {
