@@ -21,7 +21,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/OneSignalSDKWorker.js"
+              "src/notification/OneSignalSDKWorker.js"
             ],
             "styles": [
               "src/styles.css"

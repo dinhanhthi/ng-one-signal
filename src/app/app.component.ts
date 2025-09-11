@@ -15,7 +15,8 @@ export class AppComponent {
       appId: environment.oneSignal.appId,
       safari_web_id: environment.oneSignal.safariWebId,
       allowLocalhostAsSecureOrigin: true,
-      serviceWorkerPath: 'OneSignalSDKWorker.js'
+      serviceWorkerParam: { scope: '/notification/' },
+      serviceWorkerPath: '/notification/OneSignalSDKWorker.js'
     }).then(async () => {
       console.log('✅ OneSignal initialized successfully!');
 
