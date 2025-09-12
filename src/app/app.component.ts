@@ -20,6 +20,14 @@ export class AppComponent {
     }).then(async () => {
       console.log('✅ OneSignal initialized successfully!');
 
+      // Login user with external ID whenever app opens
+      try {
+        await this.oneSignal.login('dinh_anh_thi');
+        console.log('✅ User logged in with external ID: dinh_anh_thi');
+      } catch (error) {
+        console.error('❌ Failed to login user:', error);
+      }
+
       // Check service worker registration first
       if ('serviceWorker' in navigator) {
         const registrations = await navigator.serviceWorker.getRegistrations();
