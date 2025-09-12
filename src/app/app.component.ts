@@ -16,7 +16,7 @@ export class AppComponent {
       safari_web_id: environment.oneSignal.safariWebId,
       allowLocalhostAsSecureOrigin: true,
       serviceWorkerParam: { scope: '/notification/' },
-      serviceWorkerPath: '/notification/OneSignalSDKWorker.js'
+      serviceWorkerPath: 'notification/OneSignalSDKWorker.js'
     }).then(async () => {
       console.log('✅ OneSignal initialized successfully!');
 
@@ -52,7 +52,7 @@ export class AppComponent {
       const initialSubscriptionId = this.oneSignal.User.PushSubscription.id;
       console.log('Initial subscription ID (expected to be undefined):', initialSubscriptionId);
 
-      // await this.requestNotificationPermission();
+      await this.requestNotificationPermission();
     });
   }
 
